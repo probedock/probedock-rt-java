@@ -101,7 +101,7 @@ public class Connector implements Serializable {
 					put("n", result.getName()).
 					put("j", projectName).
 					put("v", projectVersion).
-					put("e", result.isActive()).
+					put("e", result.isActive() != null ? result.isActive() : true).
 					put("p", result.isPassed()).
 					put("d", result.getDuration()).
 					put("m", result.getMessage()).
