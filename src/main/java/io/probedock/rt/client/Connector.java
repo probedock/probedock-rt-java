@@ -55,16 +55,16 @@ public class Connector implements Serializable {
 	/**
 	 * Send a starting notification to the agent
 	 * 
-	 * @param projectName The project name
+	 * @param projectApiId The project API ID
 	 * @param projectVersion The project version
 	 * @param category The category
 	 */
-	public void notifyStart(String projectName, String projectVersion, String category) {
+	public void notifyStart(String projectApiId, String projectVersion, String category) {
 		try {
 			if (isStarted()) {
 				JSONObject startNotification = new JSONObject().
 					put("project", new JSONObject().
-						put("name", projectName).
+						put("apiId", projectApiId).
 						put("version", projectVersion)
 					).
 					put("category", category);
@@ -88,18 +88,18 @@ public class Connector implements Serializable {
 	 * Send a test result notification to the agent
 	 * 
 	 * @param result The test result to get the data
-	 * @param projectName The default project name if none provided by the test result
+	 * @param projectApiId The default project API ID if none provided by the test result
 	 * @param projectVersion The default project version if none provided by the test result
 	 * @param category The default category if none provided by the test result
 	 */
-	public void notifyTestResult(TestResult result, String projectName, String projectVersion, String category) {
+	public void notifyTestResult(TestResult result, String projectApiId, String projectVersion, String category) {
 		try {
 			if (isStarted()) {
 				JSONObject testResult = new JSONObject().
 					put("k", result.getKey()).
 					put("f", result.getFingerprint()).
 					put("n", result.getName()).
-					put("j", projectName).
+					put("j", projectApiId).
 					put("v", projectVersion).
 					put("e", result.isActive() != null ? result.isActive() : true).
 					put("p", result.isPassed()).
@@ -124,17 +124,17 @@ public class Connector implements Serializable {
 	/**
 	 * Send a ending notification to the agent
 	 * 
-	 * @param projectName The project name
+	 * @param projectApiId The project API ID
 	 * @param projectVersion The project version
 	 * @param category The category
 	 * @param duration The duration of the test run
 	 */
-	public void notifyEnd(String projectName, String projectVersion, String category, long duration) {
+	public void notifyEnd(String projectApiId, String projectVersion, String category, long duration) {
 		try {
 			if (isStarted()) {
 				JSONObject endNotification = new JSONObject().
 					put("project", new JSONObject().
-						put("name", projectName).
+						put("apiId", projectApiId).
 						put("version", projectVersion)
 					).
 					put("category", category).
