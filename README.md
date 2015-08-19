@@ -1,10 +1,10 @@
 # probedock-rt-java
 
-> Library to write [Probe Dock RT](https://github.com/probedock/probedock-rt) Java clients.
+> Library to write [Probe Dock RT](https://github.com/probedock/probedock-rt) Java probes.
 
 ## Usage
 
-1. Put the following dependency in your pom.xml of your client.
+1. Put the following dependency in your pom.xml of your probe.
 
 ```xml
 <dependency>
