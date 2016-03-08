@@ -6,7 +6,7 @@
 
     <groupId>io.probedock.rt.client</groupId>
     <artifactId>probedock-rt-java</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <packaging>jar</packaging>
 
     <name>Probe Dock RT Client Java</name>
@@ -37,7 +37,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <probedock.java.version>0.3.1</probedock.java.version>
+        <probedock.java.version>0.4.0</probedock.java.version>
     </properties>
 
     <distributionManagement>

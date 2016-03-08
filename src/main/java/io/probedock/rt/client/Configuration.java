@@ -1,6 +1,7 @@
 package io.probedock.rt.client;
 
 import io.probedock.client.common.config.ServerListConfiguration;
+import io.probedock.client.common.config.ScmInfo;
 import io.probedock.client.common.config.YamlConfigurationFile;
 import org.apache.commons.configuration.CompositeConfiguration;
 import org.apache.commons.configuration.ConfigurationException;
@@ -59,7 +60,7 @@ public class Configuration {
 		config = new CompositeConfiguration();
 
 		try {
-			config.addConfiguration(new YamlConfigurationFile(BASE_CONFIG_PATH, P_ROOT_NODE_NAME, new ServerListConfiguration()));
+			config.addConfiguration(new YamlConfigurationFile(BASE_CONFIG_PATH, P_ROOT_NODE_NAME, new ServerListConfiguration(), new ScmInfo()));
 		}
 		catch (ConfigurationException ce) {
 			if (LOGGER.getLevel() == Level.FINEST) {

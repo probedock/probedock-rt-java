@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.2
+
+* Bumped version of Probe Dock lib
+
 ## v0.2.1
 
 * Bumped version of Probe Dock lib
